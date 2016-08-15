@@ -7,9 +7,6 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
-  "engines": {
-    "node" : "6.2.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cmugla/farmers-markt-finder.git"
