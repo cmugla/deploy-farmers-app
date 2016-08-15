@@ -5,31 +5,31 @@ export default class AjaxAdapter{
   }
 
   getMrktsByZip(zip){
-    return fetch(`http://localhost:3000/mkts?zip=${zip}`)
+    return fetch(`https://farmer-ios.herokuapp.com/mkts?zip=${zip}`)
       .then(r => r.json())
       .then(r=>r)
   }
 
   getMrktById(market_id){
-    return fetch(`http://localhost:3000/savemkts/${market_id}`)
+    return fetch(`https://farmer-ios.herokuapp.com/savemkts/${market_id}`)
       .then(r=>r.json())
       .then(r=>r)
   }
 
   getMDataByFId(farmer_id){
-    return fetch(`http://localhost:3000/savemkts/farmer/${farmer_id}`)
+    return fetch(`https://farmer-ios.herokuapp.com/savemkts/farmer/${farmer_id}`)
       .then(r=>r.json())
       .then(r=>r)
   }
 
   getPostsByFId(farmer_id){
-    return fetch(`http://localhost:3000/savemkts/farmer/posts/${farmer_id}`)
+    return fetch(`https://farmer-ios.herokuapp.com/savemkts/farmer/posts/${farmer_id}`)
       .then(r=>r.json())
       .then(r=>r)
   }
 
   removeMarket(market_id, farmer_id){
-    return fetch(`http://localhost:3000/savemkts/farmer/removeMarket`, {
+    return fetch(`https://farmer-ios.herokuapp.com/savemkts/farmer/removeMarket`, {
       method: 'put',
       headers: {
         "Content-Type" : "application/json; charset=UTF-8"
@@ -44,19 +44,19 @@ export default class AjaxAdapter{
   }
 
   getMrktsLonLat(long, lat) {
-    return fetch(`http://localhost:3000/mkts?longitude=${long}&latitude=${lat}`)
+    return fetch(`https://farmer-ios.herokuapp.com/mkts?longitude=${long}&latitude=${lat}`)
       .then(r=>r.json())
       .then(r=>r)
   }
 
   getZip(long, lat) {
-    return fetch(`http://localhost:3000/mkts/location?longitude=${long}&latitude=${lat}`)
+    return fetch(`https://farmer-ios.herokuapp.com/mkts/location?longitude=${long}&latitude=${lat}`)
       .then(r=>r.json())
       .then(r=>r)
   }
 
   signUpFarmer(farmer_info) {
-    return fetch(`http://localhost:3000/userapi/users`, {
+    return fetch(`https://farmer-ios.herokuapp.com/userapi/users`, {
         method: "POST",
         headers: {
           'Accept': 'application/json',
@@ -68,7 +68,7 @@ export default class AjaxAdapter{
   }
 
   loginFarmer(login_info) {
-    return fetch("http://localhost:3000/userapi/authenticate", {
+    return fetch("https://farmer-ios.herokuapp.com/userapi/authenticate", {
         method: "POST",
         headers: {
           'Accept': 'application/json',
@@ -80,7 +80,7 @@ export default class AjaxAdapter{
   }
 
   addPost(postContent) {
-    return fetch(`http://localhost:3000/userapi/posts`, {
+    return fetch(`https://farmer-ios.herokuapp.com/userapi/posts`, {
         method:'post',
         headers: {
           "Content-type" : "application/json; charset=UTF-8"
@@ -92,13 +92,13 @@ export default class AjaxAdapter{
   }
 
   getPostsByMName(market_name) {
-    return fetch(`http://localhost:3000/userapi/posts?market_name=${market_name}`)
+    return fetch(`https://farmer-ios.herokuapp.com/userapi/posts?market_name=${market_name}`)
       .then(r=>r.json())
       .then(r=>r)
   }
 
   addMarket(market_info){
-    return fetch(`http://localhost:3000/savemkts`, {
+    return fetch(`https://farmer-ios.herokuapp.com/savemkts`, {
       method: 'post',
       headers: {
         "Content-type" : "application/json; charset=UTF-8"
@@ -110,7 +110,7 @@ export default class AjaxAdapter{
   }
 
   updateFarmer(data){
-    return fetch(`http://localhost:3000/userapi/users`, {
+    return fetch(`https://farmer-ios.herokuapp.com/userapi/users`, {
       method: 'put',
       headers: {
         "Content-type" : "application/json; charset=UTF-8"
